@@ -1,7 +1,7 @@
 // It sets up the Express server and the API routes.
+const express = require('express');
 const path = require('path');
 const app = express();
-const express = require('express');
 const PORT = process.env.PORT || 3001;
 const api = require('./routes');
 
