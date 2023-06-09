@@ -14,7 +14,7 @@ notes.get('/:id', (req, res) => {
     readFromFile('./db/db.json')
         .then((data) => JSON.parse(data))
         .then((json) => {
-            const result = json.filter((note) => notes.title === varId);
+            const result = json.filter((notes) => notes.title === varId);
             return result.length > 0
                 ? res.json(result)
                 : res.json('No note with that ID');
@@ -53,9 +53,9 @@ notes.post('/', (req, res) => {
             text,
         };
 
-        console.log('new tittle' + newNotes.id,newNotes.title, newNotes.text);
+        console.log('new tittle' + newTittle.id,newTittle.title, newTittle.text);
 
-        readAndAppend(newNotes, './db/db.json');
+        readAndAppend(newTittle, './db/db.json');
         res.json(`Note added successfully`);
     } else {
         res.error('Error in adding note');
